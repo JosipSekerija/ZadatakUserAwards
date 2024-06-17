@@ -26,7 +26,7 @@ namespace EvonaZadatak.Controllers
             var awards = await _awardRepo.GetAwards();
             if (awards == null)
             {
-                awards = new List<Award>(); // Ensure we pass an empty list if no awards are found
+                awards = new List<Award>(); 
             }
             return View(awards);
         }

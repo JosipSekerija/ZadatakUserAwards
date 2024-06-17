@@ -61,7 +61,7 @@ namespace EvonaZadatak.Repository
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@UserId", userId, DbType.Int32);
-                parameters.Add("@SearchDate", searchDate, DbType.Date); // Ensure the DbType matches your column type
+                parameters.Add("@SearchDate", searchDate, DbType.Date); 
 
                 var result = await connection.QueryAsync<UserAwardDto>(query, parameters);
 
@@ -74,7 +74,7 @@ namespace EvonaZadatak.Repository
 
         public async Task<List<int>> GetAllUserIds()
         {
-            var query = "SELECT Id FROM Users;"; // Adjust the table and column names as necessary
+            var query = "SELECT Id FROM Users;"; 
 
             using (var connection = _context.CreateConnection())
             {
@@ -84,7 +84,7 @@ namespace EvonaZadatak.Repository
         }
         public async Task AddAwardToAllUsers(int awardId)
         {
-            // Assuming you have a method to get all user IDs
+            
             var userIds = await GetAllUserIds();
 
             foreach (var userId in userIds)

@@ -23,11 +23,11 @@ public class DailyAwardService : BackgroundService
             {
                 var userAwardService = scope.ServiceProvider.GetRequiredService<IUserAward>();
 
-                // Now you can use userAwardService, which is correctly scoped
-                await userAwardService.AddAwardToAllUsers(awardId); // Make sure awardId is defined or passed appropriately
+               
+                await userAwardService.AddAwardToAllUsers(awardId); 
             }
 
-            // Wait for the next run, e.g., next day
+           
             await Task.Delay(TimeSpan.FromDays(1), stoppingToken);
 
             //await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);

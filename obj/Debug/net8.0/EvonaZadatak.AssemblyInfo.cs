@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EvonaZadatak")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc61b3ac394020230ea6e9292b916180acc3867e")]
 [assembly: System.Reflection.AssemblyProductAttribute("EvonaZadatak")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EvonaZadatak")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -100,7 +100,7 @@ namespace EvonaZadatak.Repository
                     throw new Exception("A record with the same name already exists.");
                 }
 
-                // Perform the update
+                
                 await connection.ExecuteAsync(updateQuery, parameters);
             }
         }

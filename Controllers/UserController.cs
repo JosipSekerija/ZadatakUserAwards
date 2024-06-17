@@ -20,7 +20,7 @@ namespace EvonaZadatak.Controllers
             var users = await _userRepo.GetUsers();
             if (users == null)
             {
-                users = new List<User>(); // Ensure we pass an empty list if no users are found
+                users = new List<User>(); 
             }
             return View(users);
         }

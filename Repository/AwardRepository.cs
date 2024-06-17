@@ -92,14 +92,14 @@ namespace EvonaZadatak.Repository
 
             using (var connection = _context.CreateConnection())
             {
-                // Check if the name already exists for a different record
+                
                 var count = await connection.ExecuteScalarAsync<int>(checkQuery, parameters);
                 if (count > 0)
                 {
                     throw new Exception("A record with the same name already exists.");
                 }
 
-                // Perform the update
+                
                 await connection.ExecuteAsync(updateQuery, parameters);
             }
         }
