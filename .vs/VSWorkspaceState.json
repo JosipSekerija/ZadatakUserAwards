@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Contracts",
+    "\\Controllers",
+    "\\Dto",
+    "\\Models",
+    "\\Repository",
+    "\\Views",
+    "\\Views\\Shared",
+    "\\Views\\User",
+    "\\Views\\UserAward"
+  ],
+  "SelectedNode": "\\Controllers\\AwardController.cs",
+  "PreviewInSolutionExplorer": false
+}

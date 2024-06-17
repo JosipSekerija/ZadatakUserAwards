@@ -1,0 +1,46 @@
+﻿@model IEnumerable<EvonaZadatak.Models.Award>
+@{
+    ViewData["Title"] = "Awards";
+}
+<div class="container">
+    <a asp-controller="Award" asp-action="Create" class="btn btn-primary">Add Award</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var award in Model)
+            {
+                <tr>
+                    <td>@award.Id</td>
+                    <td>@award.Name</td>
+                    <td>@award.Amount</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Award" asp-action="Edit" asp-route-id="@award.Id">Edit</a>
+                    </td>
+                    <td>
+
+                        @using (Html.BeginForm("DeleteAward", "Award", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="id" value="@award.Id" />
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        }
+                        
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    
+</div>

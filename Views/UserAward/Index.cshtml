@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model UserAwardViewModel
+
+<h1>User award</h1>
+
+<form asp-controller="UserAward" asp-action="CreateUserAward">
+    <input  asp-for="UserId" type="hidden" />
+    <div class="form-group">
+        <label for="AwardId">Select Award</label>
+        <select  asp-for="SelectedAwardId"  asp-items="@Model.Awards" class="form-control">
+            <option value="">Please select an award</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Add Award</button>
+</form>

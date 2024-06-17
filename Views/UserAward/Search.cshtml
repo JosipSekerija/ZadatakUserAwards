@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Search";
+}
+@model EvonaZadatak.Dto.UserAwardSearchDto
+
+<h1>Search awards</h1>
+
+<form asp-controller="UserAward" asp-action="SearchUserAwards" method="get">
+    <div class="form-group mt-3">
+        <label for="SearchDate">Search User Award by Date</label>
+        <input type="date" class="form-control" id="SearchDate" name="SearchDate" />
+
+    </div>
+    <input type="hidden" name="userId" value="@ViewBag.UserId" />
+    <button type="submit" class="btn btn-primary mt-3">Search</button>
+</form>
+
+
+@if (Model?.UserAwards != null && Model.UserAwards.Any())
+{
+<h2>Search Results</h2>
+<ul>
+    @foreach (var award in Model.UserAwards)
+        {
+    <li>@award.Name - $@award.Amount (@award.DateAwarded.ToShortDateString())</li>
+        }
+</ul>
+}
+else
+{
+<p>No results found.</p>
+}
